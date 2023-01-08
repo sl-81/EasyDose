@@ -3,6 +3,8 @@ public class Main {
     public static void main(String[] args){
         Scanner w = new Scanner(System.in);
         System.out.println("Your Child's Weight (in kg)");
+        Scanner c = new Scanner(System.in);
+        System.out.println("Select 1 for Tylenol, 2 for Advil");
         double minRegularTab = 81.25;
         double minExtraTab = 125;
         double weight = w.nextFloat();
