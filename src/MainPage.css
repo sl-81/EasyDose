@@ -1,0 +1,22 @@
+div {
+  text-align: center;
+  margin: auto;
+}
+
+.card-img-top {
+  width: 50%;
+  margin: auto;
+}
+
+.heading {
+  background-color: #fff68f;
+}
+
+.drug-cards {
+  display: flex;
+  justify-content: center; /* or other alignment options: flex-start, flex-end, space-between, space-around */
+}
+
+.error {
+  background-color: #f44336;
+}
