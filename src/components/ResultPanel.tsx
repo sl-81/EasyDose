@@ -3,21 +3,22 @@ interface ResultPanelProps {
     drug: string;
     tabletStrength: string;
     partialTab: string;
+    dose: number;
 }
 
 
 
-function DosePanel({drug, tabletStrength, partialTab}: ResultPanelProps) {
+function DosePanel({drug, tabletStrength, partialTab, dose}: ResultPanelProps) {
     return (
-        <div className='ans'>Please give up to {partialTab} tablet of {drug} {tabletStrength} every 6 hours</div>
+        <div className='ans'>Please give a maximum of {partialTab} tablet of {drug} {tabletStrength} ({dose}mg) every 6 hours</div>
     )
 }
 
 
-function ResultPanel() {
+function ResultPanel({drug, tabletStrength, partialTab, dose}: ResultPanelProps) {
     return (
         <div style={{background: '#fbf4e9c'}}>
-            <DosePanel drug='Advil' tabletStrength="200mg" partialTab="1 and 1/4" />
+            <DosePanel drug={drug} tabletStrength={tabletStrength} partialTab={partialTab} dose={dose} />
         </div>
     )
 }

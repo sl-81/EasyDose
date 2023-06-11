@@ -1,3 +1,5 @@
+import TooOldError from "../errors/TooOldError";
+import TooSmallError from "../errors/TooSmallError";
 import Drug from "../model/Drug";
 
 
@@ -7,10 +9,10 @@ export default class Patient {
 
   constructor(weight: number, age: number) {
     if (age < 2) {
-      throw new Error("Please consult your doctor");
+      throw new TooSmallError("Please consult your doctor");
     }
     if (age >= 12) {
-      throw new Error("Use adult dose");
+      throw new TooOldError("Use adult dose");
     }
     this.weight = weight;
     this.age = age;
@@ -23,7 +25,7 @@ export default class Patient {
         return dose;
       }
     }
-    throw new Error("Please consult your doctor");
+    throw new TooSmallError("Please consult your doctor");
   }
 
   getAge(): number {
