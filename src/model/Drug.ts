@@ -1,3 +1,5 @@
+import DoseInfo from "./DoseInfo";
+
 export default abstract class Drug {
   protected easyDoses: Map<number, DoseInfo> = new Map<number, DoseInfo>();
 
@@ -21,4 +23,21 @@ export default abstract class Drug {
 
   // effects: returns the maximum effective dose of drug given a certain weight
   abstract getDose(weight: number): number;
+
+  getPartialTab(dose: number): string {
+    const d: DoseInfo | undefined = this.easyDoses.get(dose);
+    if (d) {
+      return d.getPartialTab();
+    }
+    throw new Error("not valid dose");
+  }
+
+  getTabletStrength(dose: number): string {
+    const d: DoseInfo | undefined = this.easyDoses.get(dose);
+    if (d) {
+      return d.getTabletStrength();
+    }
+    throw new Error("not valid dose");
+  }
+
 }
